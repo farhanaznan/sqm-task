@@ -33,8 +33,8 @@ public class WebServerMain {
         File file = new File("C:/Users/./../jibble/webfiles");
         
         String newLine = System.getProperty("line.separator");
-        System.out.println("Jibble Web Server(modified by Ahmad Farhan -011178 "
-        		+ "Bin Aznan for G53SQM"+ newLine+ "Root Directory: " +file.getCanonicalFile()+
+        System.out.println("Jibble Web Server(modified by Ahmad Farhan  "
+        		+ "Bin Aznan for G53SQM -011178"+ newLine+ "Root Directory: " +file.getCanonicalFile()+
         		newLine + "Port: 8088");
         
         
