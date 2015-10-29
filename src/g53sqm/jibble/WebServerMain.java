@@ -15,6 +15,8 @@ $Id: WebServerMain.java,v 1.2 2004/02/01 13:37:35 pjm2 Exp $
 
 */
 
+import java.io.File;
+import java.io.IOException;
 
 /**
  * This class contains the main method for the Jibble Web Server.
@@ -23,10 +25,21 @@ $Id: WebServerMain.java,v 1.2 2004/02/01 13:37:35 pjm2 Exp $
  */
 public class WebServerMain {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         String rootDir = WebServerConfig.DEFAULT_ROOT_DIRECTORY;
         int port = WebServerConfig.DEFAULT_PORT;
+        
+        File file = new File("C:/Users/./../jibble/webfiles");
+        
+        String newLine = System.getProperty("line.separator");
+        System.out.println("Jibble Web Server(modified by Ahmad Farhan "
+        		+ "Bin Aznan for G53SQM"+ newLine+ "Root Directory: " +file.getCanonicalFile()+
+        		newLine + "Port: 8088");
+        
+        
+        
+       
         
         if (args.length > 0) {
             rootDir = args[0];
@@ -44,6 +57,9 @@ public class WebServerMain {
         try {
             WebServer server = new WebServer(rootDir, port);
             server.activate();
+            
+            
+            
         }
         catch (WebServerException e) {
             System.out.println(e.toString());

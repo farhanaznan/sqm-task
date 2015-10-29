@@ -16,6 +16,7 @@ $Id: WebServerConfig.java,v 1.2 2004/02/01 13:37:35 pjm2 Exp $
 */
 
 
+import java.io.File;
 import java.util.*;
 
 /**
@@ -36,6 +37,8 @@ public class WebServerConfig {
     public static final String VERSION = "<a href=\"http://www.jibble.org\">Jibble Web Server 1.0</a> - An extremely small Java web server";
     
     public static final String DEFAULT_ROOT_DIRECTORY = "webfiles";
+    
+    
     public static final int DEFAULT_PORT = 8088;
     
     public static final String[] DEFAULT_FILES = new String[] {"index.html", "index.htm", "index.shtml", "index.shtm", "index.stm", "index.sht"};
@@ -45,6 +48,8 @@ public class WebServerConfig {
     // Added <String> generic to HashSet and HashMap to ensure safe type conversion - TJB
     public static final HashSet <String> SSI_EXTENSIONS = new HashSet <String>();
     public static final HashMap <String, String> MIME_TYPES = new HashMap <String, String>();
+
+	
     
     // Work out the filename extension.  If there isn't one, we keep
     // it as the empty string ("").
@@ -52,6 +57,8 @@ public class WebServerConfig {
         String extension = "";
         String filename = file.getName();
         int dotPos = filename.lastIndexOf(".");
+        
+       
         if (dotPos >= 0) {
             extension = filename.substring(dotPos);
         }
@@ -171,5 +178,7 @@ public class WebServerConfig {
         MIME_TYPES.put(".avi", avi);
         
     }
+
+	
     
 }
